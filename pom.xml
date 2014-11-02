@@ -11,7 +11,7 @@
 	<url>http://www.statefulj.org</url>
 	
 	<properties>
-		<statefulj.version>0.5-SNAPSHOT</statefulj.version>
+		<statefulj.version>0.5</statefulj.version>
 		<spring.version>4.0.3.RELEASE</spring.version>
 		<spring.security.version>3.2.4.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
