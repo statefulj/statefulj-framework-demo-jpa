@@ -46,7 +46,7 @@ public class DBConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		vendorAdapter.setGenerateDdl(Boolean.TRUE);
-		vendorAdapter.setShowSql(Boolean.TRUE);
+		vendorAdapter.setShowSql(Boolean.FALSE);
 
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setDataSource(dataSource());

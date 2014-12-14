@@ -27,6 +27,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Where;
 import org.statefulj.persistence.jpa.model.StatefulEntity;
 
 
@@ -59,6 +60,7 @@ public class User extends StatefulEntity {
 	List<Account> accounts;
 
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
+	@Where(clause="state != 'DELETED'")
 	List<Notification> notifications;
 
 	public Long getId() {

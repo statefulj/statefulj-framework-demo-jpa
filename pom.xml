@@ -6,12 +6,14 @@
 	<groupId>org.statefulj.framework</groupId>
 	<artifactId>statefulj-framework-demo</artifactId>
 	<packaging>war</packaging>
-	<version>0.5</version>
+	<version>0.8-SNAPSHOT</version>
+
 	<name>statefulj-framework-demo</name>
 	<url>http://www.statefulj.org</url>
-	
+
 	<properties>
-		<statefulj.version>0.5</statefulj.version>
+		<jersey.version>2.13</jersey.version>
+		<statefulj.version>0.8-SNAPSHOT</statefulj.version>
 		<spring.version>4.0.3.RELEASE</spring.version>
 		<spring.security.version>3.2.4.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
@@ -92,7 +94,19 @@
 			<artifactId>spring-security-taglibs</artifactId>
 			<version>${spring.security.version}</version>
 		</dependency>
-		
+
+		<!-- Jersey -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.ext</groupId>
+			<artifactId>jersey-spring3</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+
 		<!-- Camel -->
 		<dependency>
 			<groupId>org.apache.camel</groupId>
@@ -109,6 +123,11 @@
 		<dependency>
 			<groupId>org.statefulj.framework</groupId>
 			<artifactId>statefulj-framework-binders-springmvc</artifactId>
+			<version>${statefulj.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.statefulj.framework</groupId>
+			<artifactId>statefulj-framework-binders-jersey</artifactId>
 			<version>${statefulj.version}</version>
 		</dependency>
 		<dependency>
@@ -168,7 +187,7 @@
 	</dependencies>
 
 	<build>
-		<finalName></finalName>
+		<finalName />
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

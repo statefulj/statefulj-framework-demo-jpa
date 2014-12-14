@@ -12,8 +12,12 @@
 		<level value="DEBUG" />
 	</logger>
 	
+	<logger name="org.glassfish">
+		<level value="TRACE" />
+	</logger>
+	
 	<logger name="org.apache.camel">
-		<level value="DEBUG" />
+		<level value="WARN" />
 	</logger>
 
 	<!-- Root Logger -->

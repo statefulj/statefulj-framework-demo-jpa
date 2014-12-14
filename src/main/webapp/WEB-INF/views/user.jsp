@@ -8,6 +8,23 @@
 		<title>User Page</title>
 	</head>
 	<body>
+		<script>
+			$(document).ready(function() {
+
+				var token = $("meta[name='_csrf']").attr("content");
+				var header = $("meta[name='_csrf_header']").attr("content");
+				$(document).ajaxSend(function(e, xhr, options) {
+				  xhr.setRequestHeader(header, token);
+				});
+				  
+		        $('.alert-dismissable button.close').click(function() {
+					$.ajax({
+						url : '/ajax/notifications/' + $(this).attr('notification'),
+						type : 'DELETE'
+					});
+				});
+			});
+		</script>
 		<div class="user-header row">
 			<div class="col-md-offset-1 col-md-10">
 				<h2 class="pull-left">${user.firstName} ${user.lastName}</h2>
@@ -25,7 +42,8 @@
 							<c:if test="${not notification.type.equals('rejected')}">
 								<c:set var="alertType" value="alert-info"/>
 							</c:if>
-							<div class="alert ${alertType}">
+							<div class="alert alert-dismissable ${alertType}">
+								<button notification="${notification.id}" type="button" class="close" data-dismiss="alert">x</button>
 								${notification.message}
 							</div>
 						</c:forEach>

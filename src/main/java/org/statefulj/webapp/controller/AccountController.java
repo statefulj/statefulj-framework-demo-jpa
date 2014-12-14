@@ -89,7 +89,7 @@ public class AccountController {
 		@Transition(from=APPROVAL_PENDING, event=LOAN_REJECTED_EVENT, to=REJECTED)
 	})
 	public void accountReviewed(Account account, String event, AccountApplication msg) {
-		notificationService.notify(account.getOwner(), account, msg.getReason());
+		notificationService.onNotify(account.getOwner(), account, msg.getReason());
 	}
 	
 	// Make sure that only the owner can access the account

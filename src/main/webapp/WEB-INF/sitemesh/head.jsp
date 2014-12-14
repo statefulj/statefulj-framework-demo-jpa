@@ -1,6 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:url value="/css" var="css"/>
 <title><sitemesh:write property='title'/></title>
+<meta name="_csrf" content="${_csrf.token}"/>
+<!-- default header name is X-CSRF-TOKEN -->
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <!-- Latest compiled and minified CSS -->
 <link href='http://fonts.googleapis.com/css?family=Halant' rel='stylesheet' type='text/css'>
