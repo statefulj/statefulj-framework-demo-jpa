@@ -1,4 +1,4 @@
-statefulj-framework-demo
+statefulj-framework-demo-jpa
 ========================
 
 Demo of the StatefulJ Framework
