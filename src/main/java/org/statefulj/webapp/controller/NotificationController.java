@@ -30,17 +30,17 @@ import static org.statefulj.webapp.controller.NotificationController.*;
 	clazz=Notification.class,
 	startState=NON_EXISTENT,
 	noops={
-		@Transition(from=SHOWING, event=DELETE, to=DELETED)
+		@Transition(from=SHOWING, event=DELETE_EVENT, to=DELETED)
 	}
 )
 public class NotificationController {
 	
 	// EVENTS
 	//
-	public static final String NOTIFY = "notify";
-	public static final String DELETE = "jersey:delete:/notifications/{id}";
+	public static final String NOTIFY_EVENT = "notify";
+	public static final String DELETE_EVENT = "jersey:delete:/notifications/{id}";
 	
-	@Transition(from=NON_EXISTENT, event=NOTIFY, to=SHOWING)
+	@Transition(from=NON_EXISTENT, event=NOTIFY_EVENT, to=SHOWING)
 	public void createNotification(Notification notification, String event, User user, Account account, String msg) {
 		notification.setType(account.getState().toLowerCase());
 		notification.setMessage(msg);
