@@ -12,14 +12,22 @@
 	<url>http://www.statefulj.org</url>
 
 	<properties>
+		<annotations-api.version>1.2</annotations-api.version>
+		<javaee-web-api.version>6.0</javaee-web-api.version>
 		<jersey.version>2.13</jersey.version>
 		<statefulj.version>0.8.1</statefulj.version>
 		<spring.version>4.0.3.RELEASE</spring.version>
 		<spring.security.version>3.2.4.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
+		<camel.version>2.13.2</camel.version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 		<logback.version>1.0.13</logback.version>
 		<jdk.version>1.7</jdk.version>
+		<sitemesh.version>3.0.0</sitemesh.version>
+		<commons.version>2.6</commons.version>
+		<validations-api.version>1.1.0.Final</validations-api.version>
+		<hibernate-validator.version>5.1.0.Final</hibernate-validator.version>
+		<hsql.version>1.8.0.10</hsql.version>
 	</properties>
 
 	<dependencies>
@@ -28,13 +36,13 @@
 		<dependency>
 			<groupId>javax.annotation</groupId>
 			<artifactId>javax.annotation-api</artifactId>
-			<version>1.2</version>
+			<version>${annotations-api.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
-			<version>6.0</version>
+			<version>${javaee-web-api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -42,12 +50,12 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>1.1.0.Final</version>
+			<version>${validations-api.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>5.1.0.Final</version>
+			<version>${hibernate-validator.version}</version>
 		</dependency>
 
 		<!-- Spring 4 dependencies -->
@@ -147,14 +155,14 @@
 		<dependency>
 			<groupId>org.sitemesh</groupId>
 			<artifactId>sitemesh</artifactId>
-			<version>3.0.0</version>
+			<version>${sitemesh.version}</version>
 		</dependency>
 
 		<!-- HSQL -->
 		<dependency>
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>1.8.0.10</version>
+			<version>${hsql.version}</version>
 		</dependency>
 
 		<!-- Logging -->
@@ -175,14 +183,9 @@
 			<version>${logback.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-broker</artifactId>
-			<version>5.9.1</version>
-		</dependency>
-		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
-			<version>2.4</version>
+			<version>${commons.version}</version>
 		</dependency>
 	</dependencies>
 
