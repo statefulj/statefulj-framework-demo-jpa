@@ -28,7 +28,6 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
@@ -37,7 +36,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class DBConfig {
 	
 	@Bean
-	public PlatformTransactionManager transactionManager() {
+	public JpaTransactionManager transactionManager() {
 		EntityManagerFactory factory = entityManagerFactory().getObject();
 		return new JpaTransactionManager(factory);
 	}
